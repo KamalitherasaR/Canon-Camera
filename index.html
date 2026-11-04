@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canon EOS 1500D DSLR Camera</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="cam.css">
+</head>
+<body>
+    <main>
+        <div class="one">
+            <img src="./images/1.jpg"
+                 alt="Canon EOS 1500D Camera"
+                 id="img1">
+            <nav class="container">
+                <img src="./images/1.jpg" alt="Camera front view" id="b">
+                <img src="./images/2.jpg" alt="Camera back view" id="c">
+                <img src="./images/3.jpg" alt="Camera angle view" id="d">
+                <img src="./images/4.jpg" alt="Camera top view" id="e">
+                <img src="./images/5.jpg" alt="Camera side view" id="f">
+                <img src="./images/6.jpg" alt="Camera flash view" id="g">
+                <img src="./images/7.jpg" alt="Camera product view" id="h">
+            </nav>
+        </div>
+        <div class="three">
+            <h1>
+                Canon EOS 1500D DSLR Camera Body
+                18-55 mm IS II Lens (Black)
+            </h1>
+            <div class="star">
+                <img src="./images/star.jpg"
+                     alt="Product rating"
+                     id="s1">
+                <del>
+                    <p id="rev">3 Reviews</p>
+                </del>
+
+            </div>
+            <div class="amt">
+                <h2 id="am1">$40.00</h2>
+                <del>
+                    <h3 id="am2">$54.00</h3>
+                </del>
+                <span class="discount">26% OFF</span>
+            </div>
+            <p id="con">
+                This Canon Camera gives you the freedom to explore different ways to shoot subjects. It packs a multitude of shooting options which you can incorporate in still images to create art that embodies the exact mood and vision you are going for.Don't worry about the lighting conditions of a place because this camera's large-sized sensor is designed to capture picture-perfect shots even in dimly lit environments. Thanks to its Wi-Fi connectivity and NFC pairing options, sharing photos is simple and convenient.
+            </p>
+            <div class="features">
+                <p>✔ 24.1 MP APS-C Sensor</p>
+                <p>✔ Full HD Video Recording</p>
+                <p>✔ Wi-Fi and NFC Connectivity</p>
+                <p>✔ 18-55 mm Lens Included</p>
+            </div>
+            <div class="option">
+                <label for="colour">Colour:</label>
+                <select id="colour">
+                    <option value="Black">Black</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="qty">Quantity:</label>
+                <div class="quantity">
+                    <button class="qty-btn" id="dec" type="button">
+                    </button>
+                    <input
+                        type="number"
+                        id="qty"
+                        value="1"
+                        min="1"
+                    >
+                    <button class="qty-btn" id="inc" type="button">
+                        +
+                    </button>
+                </div>
+            </div>
+            <button id="cart" type="button">
+                🛒 Add To Cart
+            </button>
+            <button id="viewCart" type="button">🛒 View Cart</button>
+            <button id="buyNow" type="button">Buy Now</button>
+            <p id="cartMessage"></p>
+            <p>Total items in cart: <span id="cartCount">0</span></p>
+            <div class="delivery">
+                <p>🚚 Free Delivery</p>
+                <p>↩ Easy Returns</p>
+                <p>🔒 Secure Shopping</p>
+            </div>
+        </div>
+    </main>
+    <script src="cam.js"></script>
+</body>
+</html>

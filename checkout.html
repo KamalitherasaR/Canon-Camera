@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canon Camera | Checkout</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+
+        <div id="orderDetails" class="order-details"></div>
+
+        <form id="checkoutForm">
+            <h2>Customer Details</h2>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required placeholder="Enter your name">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="Enter your email">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required
+                   pattern="[0-9]{10}" maxlength="10"
+                   placeholder="10-digit phone number">
+
+            <label for="address">Delivery Address</label>
+            <textarea id="address" required
+                      placeholder="Enter your delivery address"></textarea>
+
+            <button type="submit">Place Order</button>
+        </form>
+
+        <p id="orderMessage"></p>
+        <p class="demo-note">Demo checkout only. No payment will be processed.</p>
+    </div>
+
+    <script>
+        const item = JSON.parse(localStorage.getItem("buyNowItem"));
+        const orderDetails = document.getElementById("orderDetails");
+        const checkoutForm = document.getElementById("checkoutForm");
+
+        if (item) {
+            const total = item.price * item.quantity;
+
+            orderDetails.innerHTML = `
+                <img src="./images/1.jpg" alt="Canon Camera">
+                <div class="product-info">
+                    <h2>${item.name}</h2>
+                    <p>Price: $${item.price.toFixed(2)}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    <h3>Total: $${total.toFixed(2)}</h3>
+                </div>
+            `;
+        } else {
+            orderDetails.innerHTML = "<p>No item selected. Please go back and select a product.</p>";
+            checkoutForm.style.display = "none";
+        }
+
+        checkoutForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!item) return;
+
+            const customer = {
+                name: document.getElementById("name").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                address: document.getElementById("address").value.trim()
+            };
+
+            if (!customer.name || !customer.email ||
+                !customer.phone || !customer.address) {
+                alert("Please fill in all details.");
+                return;
+            }
+
+            const order = {orderId: "CANON" + Date.now(),customerName: customer.name,productName: item.name,quantity: item.quantity,
+total: item.price * item.quantity
+    };
+
+            localStorage.setItem("lastOrder", JSON.stringify(order));
+        localStorage.removeItem("buyNowItem");
+
+        window.location.href = "success.html";
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="success.css">
+</head>
+
+<body>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+
+        <h1>Order Placed Successfully!</h1>
+        <p>Thank you for shopping with us.</p>
+
+        <div id="orderInfo"></div>
+
+        <a href="index.html">Continue Shopping</a>
+    </div>
+
+    <script>
+        const order = JSON.parse(localStorage.getItem("lastOrder"));
+        const orderInfo = document.getElementById("orderInfo");
+
+        if (order) {
+            orderInfo.innerHTML = `
+                <h3>Hello, ${order.customerName}!</h3>
+                <p>Order ID: ${order.orderId}</p>
+                <p>Product: ${order.productName}</p>
+                <p>Quantity: ${order.quantity}</p>
+                <h2>Total: $${order.total.toFixed(2)}</h2>
+            `;
+        } else {
+            orderInfo.innerHTML = "<p>No recent demo order found.</p>";
+        }
+    </script>
+</body>
+
+</html>

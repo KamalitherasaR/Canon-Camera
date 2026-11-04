@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 30px 6%;
+    color: #222;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+#cartContainer {
+    display: grid;
+    gap: 15px;
+}
+
+.cart-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item button {
+    padding: 9px 15px;
+    border: none;
+    background: #b83232;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#grandTotal {
+    margin: 25px 0;
+}
+
+a {
+    color: #a87935;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.cart-quantity button {
+    width: 32px;
+    height: 32px;
+    background: #17243a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cart-quantity span {
+    font-weight: bold;
+}
+#clearCart {
+    padding: 12px 22px;
+    background: #b83232;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clearCart:hover {
+    background: #8f2424;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.cart-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+}
+
+.cart-details {
+    flex: 1;
+}
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.cart-quantity button {
+    width: 32px;
+    height: 32px;
+    background: #17243a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.remove-btn {
+    padding: 10px 18px;
+    background: #b83232;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
